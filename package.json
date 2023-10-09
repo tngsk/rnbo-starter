@@ -1,0 +1,17 @@
+{
+  "name": "rnbo-starter",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@rnbo/js": "^1.2.1",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --external @rnbo/js",
+    "serve": "bunx serve ./dist",
+    "dev": "bun build ./src/index.ts --outdir ./dist --external @rnbo/js --watch & bunx serve ./dist"
+  }
+}
