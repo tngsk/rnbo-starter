@@ -1,6 +1,5 @@
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
-/// <reference types="@rnbo/js" />
 
 // import { createDevice, Device, IPatcher, MessageEvent } from "@rnbo/js";
 const { createDevice, Device, IPatcher, MessageEvent } = RNBO;
@@ -50,8 +49,17 @@ const setup = async () => {
 // UI & Logic
 document.getElementById('audio_start')?.addEventListener('click', setup)
 
-document.getElementById('freq')?.addEventListener('click', (e) => {
+document.getElementById('freq')?.addEventListener('change', (e) => {
     device.parametersById.get("freq").value = e.currentTarget.value
+})
+
+
+document.getElementById('level')?.addEventListener('change', (e) => {
+    device.parametersById.get("level_dB").value = e.currentTarget.value
+})
+
+document.getElementById('time')?.addEventListener('change', (e) => {
+    device.parametersById.get("sidechain").value = e.currentTarget.value
 })
 
 document.getElementById('parameters')?.addEventListener('click', () => {
